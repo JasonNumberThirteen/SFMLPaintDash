@@ -2,20 +2,23 @@
 
 int main()
 {
-    auto window = sf::RenderWindow(sf::VideoMode({1920u, 1080u}), "CMake SFML Project");
-    window.setFramerateLimit(144);
+	const std::string GAME_TITLE = "Paint Dash";
 
-    while (window.isOpen())
-    {
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-            {
-                window.close();
-            }
-        }
+	auto window = sf::RenderWindow(sf::VideoMode({1280u, 720u}), GAME_TITLE, sf::Style::Default, sf::State::Windowed);
 
-        window.clear();
-        window.display();
-    }
+	window.setFramerateLimit(144);
+
+	while (window.isOpen())
+	{
+		while (const std::optional event = window.pollEvent())
+		{
+			if(event->is<sf::Event::Closed>())
+			{
+				window.close();
+			}
+		}
+
+		window.clear();
+		window.display();
+	}
 }
