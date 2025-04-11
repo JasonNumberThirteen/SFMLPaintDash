@@ -17,7 +17,7 @@ int main()
 			}
 		}
 
-		window.clear();
+		window.clear(constants::BACKGROUND_COLOR);
 		window.display();
 	}
 }
