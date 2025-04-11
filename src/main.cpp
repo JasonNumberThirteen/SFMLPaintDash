@@ -1,10 +1,9 @@
+#include "constants.hpp"
 #include <SFML/Graphics.hpp>
 
 int main()
 {
-	const std::string GAME_TITLE = "Paint Dash";
-
-	auto window = sf::RenderWindow(sf::VideoMode({1280u, 720u}), GAME_TITLE, sf::Style::Default, sf::State::Windowed);
+	auto window = sf::RenderWindow(sf::VideoMode({constants::GAME_WIDTH, constants::GAME_HEIGHT}), constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
 
 	window.setFramerateLimit(144);
 
