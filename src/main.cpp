@@ -12,6 +12,7 @@ int main()
 	auto gameLogoTextureSize = gameLogoTexture.getSize();
 	auto gameLogoSprite = sf::Sprite(gameLogoTexture);
 	auto cursorSprite = sf::Sprite(cursorTexture);
+	auto pressedAnyKey = false;
 
 	window.setFramerateLimit(144);
 	window.setMouseCursorVisible(false);
@@ -32,6 +33,20 @@ int main()
 			{
 				window.close();
 			}
+			else if(const auto* mouseButtonPressed = event->getIf<sf::Event::MouseButtonPressed>())
+			{
+				if(!pressedAnyKey)
+				{
+					pressedAnyKey = true;
+				}
+			}
+			else if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
+			{
+				if(!pressedAnyKey)
+				{
+					pressedAnyKey = true;
+				}
+			}
 		}
 
 		auto mousePosition = sf::Mouse::getPosition(window);
@@ -39,7 +54,12 @@ int main()
 		cursorSprite.setPosition(static_cast<sf::Vector2f>(mousePosition));
 		window.clear(constants::BACKGROUND_COLOR);
 		window.draw(gameLogoSprite);
-		window.draw(pressAnyKeyText);
+
+		if(!pressedAnyKey)
+		{
+			window.draw(pressAnyKeyText);
+		}
+
 		window.draw(cursorSprite);
 		window.display();
 	}
