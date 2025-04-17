@@ -1,4 +1,5 @@
 #include "sprite.hpp"
+#include "textUI.hpp"
 #include "constants.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -7,7 +8,7 @@ int main()
 	auto window = sf::RenderWindow(sf::VideoMode({constants::GAME_WIDTH, constants::GAME_HEIGHT}), constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
 	auto windowSize = window.getSize();
 	auto gameFont = sf::Font("assets/fonts/nationalPark.ttf");
-	auto pressAnyKeyText = sf::Text(gameFont);
+	auto pressAnyKeyText = PaintDash::graphics::TextUI(gameFont, "Press any key", 32);
 	auto gameLogoSprite = PaintDash::graphics::Sprite("assets/images/mainMenu/gameLogo.png");
 	auto gameLogoTextureSize = gameLogoSprite.getSize();
 	auto cursorSprite = PaintDash::graphics::Sprite("assets/images/cursor.png");
@@ -16,13 +17,7 @@ int main()
 	window.setFramerateLimit(144);
 	window.setMouseCursorVisible(false);
 	gameLogoSprite.getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
-	pressAnyKeyText.setString("Press any key");
-	pressAnyKeyText.setCharacterSize(32);
-
-	auto pressAnyKeyTextRect = pressAnyKeyText.getLocalBounds();
-
-	pressAnyKeyText.setOrigin(sf::Vector2f(pressAnyKeyTextRect.position.x + pressAnyKeyTextRect.size.x*0.5f, pressAnyKeyTextRect.position.y + pressAnyKeyTextRect.size.y*0.5f));
-	pressAnyKeyText.setPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
+	pressAnyKeyText.setCenteredPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
 
 	while (window.isOpen())
 	{
