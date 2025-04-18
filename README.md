@@ -14,6 +14,7 @@
 - The project presents my programming skills how I do write code taking care of several optimisations.
 
 ## Used technologies
+- [SFML](https://www.sfml-dev.org/ "Simple and Fast Multimedia Library") game library (version **3.0.0**),
 - [CMake SFML Project Template](https://github.com/SFML/cmake-sfml-project "CMake SFML Project Template") repository for importing a template,
 - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code - Code Editing. Redefined") IDE for writing code,
 - [GIMP](https://www.gimp.org/ "GIMP - GNU Image Manipulation Program") & [Paint.NET](https://www.getpaint.net/ "Paint.NET - Free Software for Digital Photo Editing") for making graphics.
