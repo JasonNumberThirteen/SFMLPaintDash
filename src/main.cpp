@@ -7,7 +7,7 @@
 
 int main()
 {
-	auto window = sf::RenderWindow(sf::VideoMode({constants::GAME_WIDTH, constants::GAME_HEIGHT}), constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
+	auto window = sf::RenderWindow(sf::VideoMode({PaintDash::constants::GAME_WIDTH, PaintDash::constants::GAME_HEIGHT}), PaintDash::constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
 	auto gameFont = sf::Font("assets/fonts/nationalPark.ttf");
 	auto cursorSprite = PaintDash::graphics::Sprite("assets/images/cursor.png");
 	auto mainMenuScene = PaintDash::scenes::MainMenuScene(window, gameFont);

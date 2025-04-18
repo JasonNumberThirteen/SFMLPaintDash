@@ -23,7 +23,7 @@ void PaintDash::scenes::MainMenuScene::update()
 
 void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow &window)
 {
-	window.clear(constants::BACKGROUND_COLOR);
+	window.clear(PaintDash::constants::BACKGROUND_COLOR);
 	window.draw(gameLogoSprite.getSprite());
 
 	if(!pressedAnyKey)
