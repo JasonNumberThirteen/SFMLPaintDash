@@ -5,10 +5,10 @@
 
 namespace constants
 {
-	const unsigned int GAME_WIDTH = 1280U;
-	const unsigned int GAME_HEIGHT = 720U;
-	const char* GAME_TITLE = "Paint Dash";
-	const sf::Color BACKGROUND_COLOR = sf::Color(108, 199, 230);
+	extern const unsigned int GAME_WIDTH;
+	extern const unsigned int GAME_HEIGHT;
+	extern const char* GAME_TITLE;
+	extern const sf::Color BACKGROUND_COLOR;
 }
 
 #endif

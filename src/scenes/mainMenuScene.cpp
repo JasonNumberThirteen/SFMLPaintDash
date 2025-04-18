@@ -1,0 +1,43 @@
+#include "../sprite.hpp"
+#include "../textUI.hpp"
+#include "../constants.hpp"
+#include "mainMenuScene.hpp"
+
+PaintDash::scenes::MainMenuScene::MainMenuScene(sf::RenderWindow &window, const sf::Font &font) : Scene("MAIN_MENU"), pressAnyKeyText(font, "Press any key", 32), gameLogoSprite("assets/images/mainMenu/gameLogo.png")
+{
+	windowSize = window.getSize();
+}
+
+void PaintDash::scenes::MainMenuScene::init()
+{
+	auto gameLogoTextureSize = gameLogoSprite.getSize();
+
+	gameLogoSprite.getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
+	pressAnyKeyText.setCenteredPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
+}
+
+void PaintDash::scenes::MainMenuScene::update()
+{
+	
+}
+
+void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow &window)
+{
+	window.clear(constants::BACKGROUND_COLOR);
+	window.draw(gameLogoSprite.getSprite());
+
+	if(!pressedAnyKey)
+	{
+		window.draw(pressAnyKeyText);
+	}
+}
+
+bool PaintDash::scenes::MainMenuScene::anyKeyWasPressed()
+{
+	return pressedAnyKey;
+}
+
+void PaintDash::scenes::MainMenuScene::setPressedAnyKey(bool pressed)
+{
+	pressedAnyKey = pressed;
+}
