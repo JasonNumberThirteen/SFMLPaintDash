@@ -1,7 +1,7 @@
-#include "sprite.hpp"
-#include "textUI.hpp"
-#include "constants.hpp"
-#include "scenes/mainMenuScene.hpp"
+#include "../headers/sprite.hpp"
+#include "../headers/textUI.hpp"
+#include "../headers/constants.hpp"
+#include "../headers/scene/mainMenuScene.hpp"
 
 #include <SFML/Graphics.hpp>
 

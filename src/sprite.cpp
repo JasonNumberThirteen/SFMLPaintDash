@@ -1,4 +1,4 @@
-#include "sprite.hpp"
+#include "../headers/sprite.hpp"
 
 PaintDash::graphics::Sprite::Sprite(const std::string &filename) : sprite(texture)
 {

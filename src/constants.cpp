@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 
-#include "constants.hpp"
+#include "../headers/constants.hpp"
 
 namespace PaintDash
 {

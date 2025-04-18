@@ -12,6 +12,6 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp src/constants.hpp src/constants.cpp src/sprite.hpp src/sprite.cpp src/textUI.hpp src/textUI.cpp src/scenes/scene.hpp src/scenes/scene.cpp src/scenes/mainMenuScene.hpp src/scenes/mainMenuScene.cpp)
+add_executable(main src/main.cpp headers/constants.hpp src/constants.cpp headers/sprite.hpp src/sprite.cpp headers/textUI.hpp src/textUI.cpp headers/scene/scene.hpp src/scene/scene.cpp headers/scene/mainMenuScene.hpp src/scene/mainMenuScene.cpp)
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)

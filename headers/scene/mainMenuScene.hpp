@@ -3,9 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "scene.hpp"
 #include "../sprite.hpp"
 #include "../textUI.hpp"
-#include "scene.hpp"
 
 namespace PaintDash
 {

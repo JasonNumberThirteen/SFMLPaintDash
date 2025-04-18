@@ -1,7 +1,7 @@
-#include "../sprite.hpp"
-#include "../textUI.hpp"
-#include "../constants.hpp"
-#include "mainMenuScene.hpp"
+#include "../../headers/sprite.hpp"
+#include "../../headers/textUI.hpp"
+#include "../../headers/constants.hpp"
+#include "../../headers/scene/mainMenuScene.hpp"
 
 PaintDash::scenes::MainMenuScene::MainMenuScene(sf::RenderWindow &window, const sf::Font &font) : Scene("MAIN_MENU"), pressAnyKeyText(font, "Press any key", 32), gameLogoSprite("assets/images/mainMenu/gameLogo.png")
 {
