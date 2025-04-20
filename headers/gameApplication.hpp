@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "scene/mainMenuScene.hpp"
+#include "managers/textureManager.hpp"
 
 namespace PaintDash
 {
@@ -21,6 +22,7 @@ class PaintDash::core::GameApplication
 	private:
 		sf::RenderWindow window;
 		sf::Font gameFont;
+		PaintDash::managers::TextureManager textureManager;
 		PaintDash::graphics::Sprite cursorSprite;
 		PaintDash::scenes::MainMenuScene mainMenuScene;
 		void update();

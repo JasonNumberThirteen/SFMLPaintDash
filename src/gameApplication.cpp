@@ -1,6 +1,9 @@
 #include "../headers/gameApplication.hpp"
+#include "../headers/managers/textureManager.hpp"
 
-PaintDash::core::GameApplication::GameApplication(sf::VideoMode videoMode, const sf::String &title, uint32_t style, sf::State state) : window(sf::RenderWindow(videoMode, title, style, state)), cursorSprite("assets/images/cursor.png"), mainMenuScene(window, gameFont)
+auto textureManager = PaintDash::managers::TextureManager();
+
+PaintDash::core::GameApplication::GameApplication(sf::VideoMode videoMode, const sf::String &title, uint32_t style, sf::State state) : window(sf::RenderWindow(videoMode, title, style, state)), cursorSprite("cursor"), mainMenuScene(window, gameFont)
 {
 	gameFont = sf::Font("assets/fonts/nationalPark.ttf");
 }

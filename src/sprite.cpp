@@ -1,8 +1,11 @@
 #include "../headers/sprite.hpp"
+#include "../headers/managers/textureManager.hpp"
 
-PaintDash::graphics::Sprite::Sprite(const std::string &filename) : sprite(texture)
+extern PaintDash::managers::TextureManager textureManager;
+
+PaintDash::graphics::Sprite::Sprite(const std::string &textureKey) : sprite(texture)
 {
-	texture = sf::Texture(filename);
+	texture = textureManager.getTextureByKey(textureKey);
 	sprite = sf::Sprite(texture);
 }
 

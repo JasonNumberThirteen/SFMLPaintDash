@@ -2,8 +2,9 @@
 #include "../../headers/textUI.hpp"
 #include "../../headers/constants.hpp"
 #include "../../headers/scene/mainMenuScene.hpp"
+#include "../../headers/managers/textureManager.hpp"
 
-PaintDash::scenes::MainMenuScene::MainMenuScene(sf::RenderWindow &window, const sf::Font &font) : Scene("MAIN_MENU"), pressAnyKeyText(font, "Press any key", 32), gameLogoSprite("assets/images/mainMenu/gameLogo.png")
+PaintDash::scenes::MainMenuScene::MainMenuScene(sf::RenderWindow &window, const sf::Font &font) : Scene("MAIN_MENU"), pressAnyKeyText(font, "Press any key", 32), gameLogoSprite("gameLogo")
 {
 	windowSize = window.getSize();
 }
