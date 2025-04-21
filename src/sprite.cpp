@@ -1,12 +1,11 @@
 #include "../headers/sprite.hpp"
-#include "../headers/managers/textureManager.hpp"
+#include "../headers/gameApplication.hpp"
 
-extern PaintDash::managers::TextureManager textureManager;
+extern PaintDash::core::GameApplication gameApplication;
 
-PaintDash::graphics::Sprite::Sprite(const std::string &textureKey) : sprite(texture)
+PaintDash::graphics::Sprite::Sprite(const std::string &textureKey) : texture(gameApplication.getTextureManager().getTextureByKey(textureKey)), sprite(texture)
 {
-	texture = textureManager.getTextureByKey(textureKey);
-	sprite = sf::Sprite(texture);
+	
 }
 
 sf::Vector2u PaintDash::graphics::Sprite::getSize()

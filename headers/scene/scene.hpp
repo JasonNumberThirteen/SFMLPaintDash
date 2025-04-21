@@ -17,7 +17,9 @@ class PaintDash::core::Scene
 		Scene(const std::string id);
 		virtual void init() = 0;
 		virtual void update() = 0;
+		virtual void processInput(std::optional<sf::Event> event) = 0;
 		virtual void draw(sf::RenderWindow &window) = 0;
+		std::string getID() const;
 	private:
 		std::string id;
 };

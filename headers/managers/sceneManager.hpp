@@ -1,0 +1,28 @@
+#ifndef PAINT_DASH_SCENE_MANAGER_H
+#define PAINT_DASH_SCENE_MANAGER_H
+
+#include "../scene/scene.hpp"
+
+namespace PaintDash
+{
+	namespace managers
+	{
+		class SceneManager;
+	}
+}
+
+class PaintDash::managers::SceneManager
+{
+	public:
+		SceneManager();
+		void changeScene(std::string id);
+		void init();
+		void update();
+		void processInput(std::optional<sf::Event> event);
+		void draw(sf::RenderWindow& window);
+	private:
+		std::vector<std::shared_ptr<PaintDash::core::Scene>> scenes;
+		std::shared_ptr<PaintDash::core::Scene> currentScene;
+};
+
+#endif

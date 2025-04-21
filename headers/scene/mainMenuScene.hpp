@@ -18,15 +18,14 @@ namespace PaintDash
 class PaintDash::scenes::MainMenuScene : public PaintDash::core::Scene
 {
 	public:
-		MainMenuScene(sf::RenderWindow &window, const sf::Font &font);
-		void init();
-		void update();
-		void draw(sf::RenderWindow &window);
-		bool anyKeyWasPressed();
-		void setPressedAnyKey(bool pressed);
+		MainMenuScene();
+		void init() override;
+		void update() override;
+		void processInput(std::optional<sf::Event> event) override;
+		void draw(sf::RenderWindow &window) override;
+		void setKeyAsPressedIfNeeded();
 	private:
 		bool pressedAnyKey = false;
-		PaintDash::graphics::Sprite gameLogoSprite;
 		PaintDash::graphics::TextUI pressAnyKeyText;
 		sf::Vector2u windowSize;
 };
