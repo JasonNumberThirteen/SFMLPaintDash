@@ -1,3 +1,4 @@
+#include "../../headers/constants.hpp"
 #include "../../headers/managers/textureManager.hpp"
 
 PaintDash::managers::TextureManager::TextureManager()

@@ -11,9 +11,10 @@ PaintDash::scenes::MainMenuScene::MainMenuScene() : Scene("MAIN_MENU"), pressAny
 
 void PaintDash::scenes::MainMenuScene::init()
 {
-	auto gameLogoTextureSize = gameApplication.getGameLogoSprite().getSize();
+	auto& gameLogoSprite = gameApplication.getSpriteManager().getSpriteByKey("gameLogo");
+	auto gameLogoTextureSize = gameLogoSprite.getSize();
 
-	gameApplication.getGameLogoSprite().getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
+	gameLogoSprite.getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
 	pressAnyKeyText.setCenteredPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
 }
 
@@ -37,7 +38,7 @@ void PaintDash::scenes::MainMenuScene::processInput(std::optional<sf::Event> eve
 void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow& window)
 {
 	window.clear(PaintDash::constants::BACKGROUND_COLOR);
-	window.draw(gameApplication.getGameLogoSprite().getSprite());
+	window.draw(gameApplication.getSpriteManager().getSpriteByKey("gameLogo").getSprite());
 
 	if(!pressedAnyKey)
 	{

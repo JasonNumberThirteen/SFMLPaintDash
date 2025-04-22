@@ -5,6 +5,7 @@
 
 #include "sprite.hpp"
 #include "managers/sceneManager.hpp"
+#include "managers/spriteManager.hpp"
 #include "managers/textureManager.hpp"
 
 namespace PaintDash
@@ -23,14 +24,13 @@ class PaintDash::core::GameApplication
 		const sf::RenderWindow& getWindow();
 		const sf::Font& getFont();
 		const PaintDash::managers::TextureManager& getTextureManager();
-		PaintDash::graphics::Sprite& getGameLogoSprite();
+		const PaintDash::managers::SpriteManager& getSpriteManager();
 	private:
 		sf::RenderWindow window;
 		sf::Font gameFont;
 		PaintDash::managers::TextureManager textureManager = PaintDash::managers::TextureManager();
+		PaintDash::managers::SpriteManager spriteManager = PaintDash::managers::SpriteManager();
 		PaintDash::managers::SceneManager sceneManager = PaintDash::managers::SceneManager();
-		PaintDash::graphics::Sprite cursorSprite;
-		PaintDash::graphics::Sprite gameLogoSprite;
 		void update();
 		void draw();
 		void updateCursorPosition();
