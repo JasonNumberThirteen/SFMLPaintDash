@@ -15,6 +15,7 @@ class PaintDash::core::Scene
 {
 	public:
 		Scene(const std::string id);
+		virtual ~Scene() = default;
 		virtual void init() = 0;
 		virtual void update() = 0;
 		virtual void processInput(std::optional<sf::Event> event) = 0;
