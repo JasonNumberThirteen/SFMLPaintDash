@@ -63,11 +63,11 @@ void PaintDash::core::GameApplication::updateCursorPosition()
 {
 	auto mousePosition = sf::Mouse::getPosition(window);
 
-	spriteManager.getSpriteByKey("cursor").getSprite().setPosition(static_cast<sf::Vector2f>(mousePosition));
+	spriteManager.getSpriteByKey(PaintDash::constants::textureKeys::CURSOR_TEXTURE_KEY).getSprite().setPosition(static_cast<sf::Vector2f>(mousePosition));
 }
 
 void PaintDash::core::GameApplication::draw()
 {
 	sceneManager.draw(window);
-	window.draw(spriteManager.getSpriteByKey("cursor").getSprite());
+	window.draw(spriteManager.getSpriteByKey(PaintDash::constants::textureKeys::CURSOR_TEXTURE_KEY).getSprite());
 }

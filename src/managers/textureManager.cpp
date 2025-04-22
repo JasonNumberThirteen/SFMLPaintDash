@@ -3,8 +3,8 @@
 
 PaintDash::managers::TextureManager::TextureManager()
 {
-	addTexture("cursor", "assets/images/cursor.png");
-	addTexture("gameLogo", "assets/images/mainMenu/gameLogo.png");
+	addTexture(PaintDash::constants::textureKeys::CURSOR_TEXTURE_KEY, "assets/images/cursor.png");
+	addTexture(PaintDash::constants::textureKeys::GAME_LOGO_TEXTURE_KEY, "assets/images/mainMenu/gameLogo.png");
 }
 
 PaintDash::managers::TextureManager::~TextureManager()

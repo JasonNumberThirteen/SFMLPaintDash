@@ -1,4 +1,5 @@
 #include "../../headers/sprite.hpp"
+#include "../../headers/constants.hpp"
 #include "../../headers/gameApplication.hpp"
 #include "../../headers/managers/spriteManager.hpp"
 
@@ -6,8 +7,8 @@ extern PaintDash::core::GameApplication gameApplication;
 
 PaintDash::managers::SpriteManager::SpriteManager()
 {
-	addSprite("cursor");
-	addSprite("gameLogo");
+	addSprite(PaintDash::constants::textureKeys::CURSOR_TEXTURE_KEY);
+	addSprite(PaintDash::constants::textureKeys::GAME_LOGO_TEXTURE_KEY);
 }
 
 PaintDash::managers::SpriteManager::~SpriteManager()
