@@ -14,7 +14,7 @@ namespace PaintDash
 class PaintDash::graphics::Sprite
 {
 	public:
-		Sprite(const std::string &filename);
+		Sprite(const std::string& textureKey);
 		sf::Vector2u getSize();
 		sf::Sprite& getSprite();
 	private:

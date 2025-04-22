@@ -22,7 +22,7 @@ class PaintDash::scenes::MainMenuScene : public PaintDash::core::Scene
 		void init() override;
 		void update() override;
 		void processInput(std::optional<sf::Event> event) override;
-		void draw(sf::RenderWindow &window) override;
+		void draw(sf::RenderWindow& window) override;
 		void setKeyAsPressedIfNeeded();
 	private:
 		bool pressedAnyKey = false;

@@ -18,11 +18,11 @@ namespace PaintDash
 class PaintDash::core::GameApplication
 {
 	public:
-		GameApplication(sf::VideoMode videoMode, const sf::String &title, uint32_t style, sf::State state);
+		GameApplication(sf::VideoMode videoMode, const sf::String& title, uint32_t style, sf::State state);
 		void init();
-		sf::RenderWindow& getWindow();
-		sf::Font& getFont();
-		PaintDash::managers::TextureManager& getTextureManager();
+		const sf::RenderWindow& getWindow();
+		const sf::Font& getFont();
+		const PaintDash::managers::TextureManager& getTextureManager();
 		PaintDash::graphics::Sprite& getGameLogoSprite();
 	private:
 		sf::RenderWindow window;

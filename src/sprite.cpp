@@ -3,7 +3,7 @@
 
 extern PaintDash::core::GameApplication gameApplication;
 
-PaintDash::graphics::Sprite::Sprite(const std::string &textureKey) : texture(gameApplication.getTextureManager().getTextureByKey(textureKey)), sprite(texture)
+PaintDash::graphics::Sprite::Sprite(const std::string& textureKey) : texture(gameApplication.getTextureManager().getTextureByKey(textureKey)), sprite(texture)
 {
 	
 }

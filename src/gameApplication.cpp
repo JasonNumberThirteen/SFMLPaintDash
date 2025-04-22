@@ -22,17 +22,17 @@ void PaintDash::core::GameApplication::init()
 	}
 }
 
-sf::RenderWindow& PaintDash::core::GameApplication::getWindow()
+const sf::RenderWindow& PaintDash::core::GameApplication::getWindow()
 {
 	return window;
 }
 
-sf::Font& PaintDash::core::GameApplication::getFont()
+const sf::Font& PaintDash::core::GameApplication::getFont()
 {
 	return gameFont;
 }
 
-PaintDash::managers::TextureManager& PaintDash::core::GameApplication::getTextureManager()
+const PaintDash::managers::TextureManager& PaintDash::core::GameApplication::getTextureManager()
 {
 	return textureManager;
 }

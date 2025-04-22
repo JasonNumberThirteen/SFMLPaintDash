@@ -1,6 +1,6 @@
 #include "../headers/textUI.hpp"
 
-PaintDash::graphics::TextUI::TextUI(const sf::Font &font, const std::string string, unsigned int characterSize) : sf::Text(font, string, characterSize)
+PaintDash::graphics::TextUI::TextUI(const sf::Font& font, const std::string string, unsigned int characterSize) : sf::Text(font, string, characterSize)
 {
 	
 }

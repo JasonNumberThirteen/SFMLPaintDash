@@ -14,7 +14,7 @@ namespace PaintDash
 class PaintDash::graphics::TextUI : public sf::Text
 {
 	public:
-		TextUI(const sf::Font &font, const std::string string, unsigned int characterSize);
+		TextUI(const sf::Font& font, const std::string string, unsigned int characterSize);
 		void setCenteredPosition(sf::Vector2f position);
 };
 

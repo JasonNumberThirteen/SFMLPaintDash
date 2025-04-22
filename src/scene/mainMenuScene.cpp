@@ -34,7 +34,7 @@ void PaintDash::scenes::MainMenuScene::processInput(std::optional<sf::Event> eve
 	}
 }
 
-void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow &window)
+void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow& window)
 {
 	window.clear(PaintDash::constants::BACKGROUND_COLOR);
 	window.draw(gameApplication.getGameLogoSprite().getSprite());
