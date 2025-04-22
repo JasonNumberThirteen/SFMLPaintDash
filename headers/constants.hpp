@@ -9,6 +9,7 @@ namespace PaintDash
 	{
 		extern const unsigned int GAME_WIDTH;
 		extern const unsigned int GAME_HEIGHT;
+		extern const unsigned int GAME_FRAMERATE_LIMIT;
 		extern const char* GAME_TITLE;
 		extern const sf::Color BACKGROUND_COLOR;
 	}

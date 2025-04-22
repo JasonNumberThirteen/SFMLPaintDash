@@ -1,3 +1,4 @@
+#include "../headers/constants.hpp"
 #include "../headers/gameApplication.hpp"
 #include "../headers/managers/textureManager.hpp"
 
@@ -10,7 +11,7 @@ PaintDash::core::GameApplication::GameApplication(sf::VideoMode videoMode, const
 
 void PaintDash::core::GameApplication::init()
 {
-	window.setFramerateLimit(144);
+	window.setFramerateLimit(PaintDash::constants::GAME_FRAMERATE_LIMIT);
 	window.setMouseCursorVisible(false);
 	sceneManager.init();
 
