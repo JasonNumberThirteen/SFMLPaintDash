@@ -3,7 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 
-auto gameApplication = PaintDash::core::GameApplication(sf::VideoMode({PaintDash::constants::GAME_WIDTH, PaintDash::constants::GAME_HEIGHT}), PaintDash::constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
+using namespace PaintDash;
+
+auto gameApplication = core::GameApplication(sf::VideoMode({constants::GAME_WIDTH, constants::GAME_HEIGHT}), constants::GAME_TITLE, sf::Style::Default, sf::State::Windowed);
 
 int main()
 {
