@@ -2,6 +2,7 @@
 #include "../../headers/gameApplication.hpp"
 #include "../../headers/ui/mainMenuPanelUI.hpp"
 #include "../../headers/scenes/mainMenuScene.hpp"
+#include "../../headers/functions/math.hpp"
 
 extern PaintDash::core::GameApplication gameApplication;
 
@@ -21,14 +22,31 @@ void PaintDash::graphics::MainMenuPanelUI::init()
 	{
 		mainMenuScene->pressedAnyKeyEvent = [&]
 		{
-			gameLogoSprite.getSprite().move(sf::Vector2f(0, -160));
-			
 			pressedAnyKey = true;
 		};
 	}
 	
 	gameLogoSprite.getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
 	pressAnyKeyText.setCenteredPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
+
+	gameLogoSpriteInitialY = gameLogoSprite.getSprite().getPosition().y;
+}
+
+void PaintDash::graphics::MainMenuPanelUI::update(float deltaTime)
+{
+	auto& gameLogoSprite = gameApplication.getSpriteManager().getSpriteByKey(PaintDash::constants::textureKeys::GAME_LOGO_TEXTURE_KEY);
+	auto& gameLogoSpriteSprite = gameLogoSprite.getSprite();
+	auto gameLogoSpritePosition = gameLogoSpriteSprite.getPosition();
+	auto gameLogoSpriteTargetY = 16;
+	
+	if(!pressedAnyKey || gameLogoSpritePosition.y <= gameLogoSpriteTargetY)
+	{
+		return;
+	}
+
+	auto gameLogoSpriteY = LERP(gameLogoSpriteInitialY, gameLogoSpriteTargetY, deltaTime);
+
+	gameLogoSpriteSprite.setPosition(sf::Vector2f(gameLogoSpritePosition.x, gameLogoSpriteY));
 }
 
 void PaintDash::graphics::MainMenuPanelUI::draw(sf::RenderWindow& window)

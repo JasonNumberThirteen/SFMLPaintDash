@@ -13,6 +13,7 @@ void PaintDash::core::GameApplication::init()
 	window.setFramerateLimit(PaintDash::constants::GAME_FRAMERATE_LIMIT);
 	window.setMouseCursorVisible(false);
 	sceneManager.init();
+	gameClock.start();
 
 	while (window.isOpen())
 	{
@@ -20,6 +21,8 @@ void PaintDash::core::GameApplication::init()
 		draw();
 		window.display();
 	}
+
+	gameClock.stop();
 }
 
 const sf::RenderWindow& PaintDash::core::GameApplication::getWindow()
@@ -49,6 +52,8 @@ const PaintDash::managers::SceneManager& PaintDash::core::GameApplication::getSc
 
 void PaintDash::core::GameApplication::update()
 {
+	sceneManager.update(gameClock.getElapsedTime().asSeconds());
+	
 	while (const std::optional event = window.pollEvent())
 	{
 		if(event->is<sf::Event::Closed>())
@@ -58,7 +63,7 @@ void PaintDash::core::GameApplication::update()
 
 		sceneManager.processInput(event);
 	}
-
+	
 	updateCursorPosition();
 }
 

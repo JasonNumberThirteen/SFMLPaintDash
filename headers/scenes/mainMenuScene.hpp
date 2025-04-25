@@ -21,7 +21,7 @@ class PaintDash::scenes::MainMenuScene : public PaintDash::core::Scene
 		std::function<void()> pressedAnyKeyEvent;
 		MainMenuScene();
 		void init() override;
-		void update() override;
+		void update(float deltaTime) override;
 		void processInput(std::optional<sf::Event> event) override;
 		void draw(sf::RenderWindow& window) override;
 		void setKeyAsPressedIfNeeded();

@@ -16,11 +16,13 @@ class PaintDash::graphics::MainMenuPanelUI
 	public:
 		MainMenuPanelUI();
 		void init();
+		void update(float deltaTime);
 		void draw(sf::RenderWindow& window);
 	private:
 		sf::Vector2u windowSize;
 		PaintDash::graphics::TextUI pressAnyKeyText;
 		bool pressedAnyKey = false;
+		float gameLogoSpriteInitialY;
 };
 
 #endif

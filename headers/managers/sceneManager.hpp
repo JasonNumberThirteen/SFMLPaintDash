@@ -17,7 +17,7 @@ class PaintDash::managers::SceneManager
 		SceneManager();
 		void changeScene(std::string id);
 		void init();
-		void update();
+		void update(float deltaTime);
 		void processInput(std::optional<sf::Event> event);
 		void draw(sf::RenderWindow& window);
 		std::shared_ptr<PaintDash::core::Scene> getSceneByKey(const std::string& id);

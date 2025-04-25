@@ -14,9 +14,9 @@ void PaintDash::scenes::MainMenuScene::init()
 	mainMenuPanelUI.init();
 }
 
-void PaintDash::scenes::MainMenuScene::update()
+void PaintDash::scenes::MainMenuScene::update(float deltaTime)
 {
-	
+	mainMenuPanelUI.update(deltaTime);
 }
 
 void PaintDash::scenes::MainMenuScene::processInput(std::optional<sf::Event> event)

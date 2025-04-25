@@ -33,11 +33,11 @@ void PaintDash::managers::SceneManager::init()
 	changeScene("MAIN_MENU");
 }
 
-void PaintDash::managers::SceneManager::update()
+void PaintDash::managers::SceneManager::update(float deltaTime)
 {
 	if(currentScene != nullptr)
 	{
-		currentScene->update();
+		currentScene->update(deltaTime);
 	}
 }
 

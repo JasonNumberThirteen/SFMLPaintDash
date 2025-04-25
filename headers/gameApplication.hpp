@@ -28,6 +28,7 @@ class PaintDash::core::GameApplication
 	private:
 		sf::RenderWindow window;
 		sf::Font gameFont;
+		sf::Clock gameClock;
 		PaintDash::managers::TextureManager textureManager = PaintDash::managers::TextureManager();
 		PaintDash::managers::SpriteManager spriteManager = PaintDash::managers::SpriteManager();
 		PaintDash::managers::SceneManager sceneManager = PaintDash::managers::SceneManager();
