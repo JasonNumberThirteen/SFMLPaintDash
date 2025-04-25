@@ -1,4 +1,4 @@
-#include "../headers/textUI.hpp"
+#include "../../headers/ui/textUI.hpp"
 
 PaintDash::graphics::TextUI::TextUI(const sf::Font& font, const std::string string, unsigned int characterSize) : sf::Text(font, string, characterSize)
 {

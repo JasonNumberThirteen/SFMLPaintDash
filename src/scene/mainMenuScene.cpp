@@ -4,18 +4,14 @@
 
 extern PaintDash::core::GameApplication gameApplication;
 
-PaintDash::scenes::MainMenuScene::MainMenuScene() : Scene("MAIN_MENU"), pressAnyKeyText(gameApplication.getFont(), "Press any key", 32)
+PaintDash::scenes::MainMenuScene::MainMenuScene() : Scene("MAIN_MENU")
 {
-	windowSize = gameApplication.getWindow().getSize();
+	
 }
 
 void PaintDash::scenes::MainMenuScene::init()
 {
-	auto& gameLogoSprite = gameApplication.getSpriteManager().getSpriteByKey(PaintDash::constants::textureKeys::GAME_LOGO_TEXTURE_KEY);
-	auto gameLogoTextureSize = gameLogoSprite.getSize();
-
-	gameLogoSprite.getSprite().setPosition(sf::Vector2f((windowSize.x - gameLogoTextureSize.x) >> 1, (windowSize.y - gameLogoTextureSize.y) >> 1));
-	pressAnyKeyText.setCenteredPosition(sf::Vector2f(windowSize.x*0.5f, (windowSize.y + gameLogoTextureSize.y)*0.5f + 64));
+	mainMenuPanelUI.init();
 }
 
 void PaintDash::scenes::MainMenuScene::update()
@@ -38,18 +34,25 @@ void PaintDash::scenes::MainMenuScene::processInput(std::optional<sf::Event> eve
 void PaintDash::scenes::MainMenuScene::draw(sf::RenderWindow& window)
 {
 	window.clear(PaintDash::constants::BACKGROUND_COLOR);
-	window.draw(gameApplication.getSpriteManager().getSpriteByKey(PaintDash::constants::textureKeys::GAME_LOGO_TEXTURE_KEY).getSprite());
-
-	if(!pressedAnyKey)
-	{
-		window.draw(pressAnyKeyText);
-	}
+	mainMenuPanelUI.draw(window);
 }
 
 void PaintDash::scenes::MainMenuScene::setKeyAsPressedIfNeeded()
 {
-	if(!pressedAnyKey)
+	if(pressedAnyKey)
 	{
-		pressedAnyKey = true;
+		return;
 	}
+
+	pressedAnyKey = true;
+
+	if(pressedAnyKeyEvent != nullptr)
+	{
+		pressedAnyKeyEvent();
+	}
+}
+
+bool PaintDash::scenes::MainMenuScene::anyKeyWasPressed()
+{
+	return pressedAnyKey;
 }

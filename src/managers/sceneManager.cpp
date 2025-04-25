@@ -1,11 +1,8 @@
 #include <memory>
 #include <algorithm>
 
-#include "../../headers/gameApplication.hpp"
 #include "../../headers/scene/mainMenuScene.hpp"
 #include "../../headers/managers/sceneManager.hpp"
-
-extern PaintDash::core::GameApplication gameApplication;
 
 PaintDash::managers::SceneManager::SceneManager()
 {
@@ -16,17 +13,14 @@ PaintDash::managers::SceneManager::SceneManager()
 
 void PaintDash::managers::SceneManager::changeScene(std::string id)
 {
-	auto sceneWithID = std::find_if(scenes.begin(), scenes.end(), [=](std::shared_ptr<PaintDash::core::Scene>& scene)
-	{
-		return scene->getID().compare(id) == 0;
-	});
+	auto sceneWithID = getSceneByKey(id);
 
-	if(sceneWithID == scenes.end())
+	if(sceneWithID == nullptr)
 	{
 		return;
 	}
 
-	currentScene = *sceneWithID;
+	currentScene = sceneWithID;
 
 	if(currentScene != nullptr)
 	{
@@ -61,4 +55,14 @@ void PaintDash::managers::SceneManager::draw(sf::RenderWindow& window)
 	{
 		currentScene->draw(window);
 	}
+}
+
+std::shared_ptr<PaintDash::core::Scene> PaintDash::managers::SceneManager::getSceneByKey(const std::string& id)
+{
+	auto iterator = std::find_if(scenes.begin(), scenes.end(), [=](const std::shared_ptr<PaintDash::core::Scene>& scene)
+	{
+		return scene->getID().compare(id) == 0;
+	});
+
+	return *iterator;
 }

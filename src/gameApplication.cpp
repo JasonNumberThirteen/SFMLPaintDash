@@ -1,7 +1,5 @@
 #include "../headers/constants.hpp"
 #include "../headers/gameApplication.hpp"
-#include "../headers/managers/spriteManager.hpp"
-#include "../headers/managers/textureManager.hpp"
 
 extern PaintDash::core::GameApplication gameApplication;
 
@@ -42,6 +40,11 @@ const PaintDash::managers::TextureManager& PaintDash::core::GameApplication::get
 const PaintDash::managers::SpriteManager& PaintDash::core::GameApplication::getSpriteManager()
 {
 	return spriteManager;
+}
+
+const PaintDash::managers::SceneManager& PaintDash::core::GameApplication::getSceneManager()
+{
+	return sceneManager;
 }
 
 void PaintDash::core::GameApplication::update()

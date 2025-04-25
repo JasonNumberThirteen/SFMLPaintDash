@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "sprite.hpp"
 #include "managers/sceneManager.hpp"
 #include "managers/spriteManager.hpp"
 #include "managers/textureManager.hpp"
@@ -25,6 +24,7 @@ class PaintDash::core::GameApplication
 		const sf::Font& getFont();
 		const PaintDash::managers::TextureManager& getTextureManager();
 		const PaintDash::managers::SpriteManager& getSpriteManager();
+		const PaintDash::managers::SceneManager& getSceneManager();
 	private:
 		sf::RenderWindow window;
 		sf::Font gameFont;

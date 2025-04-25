@@ -1,4 +1,3 @@
-#include "../../headers/sprite.hpp"
 #include "../../headers/constants.hpp"
 #include "../../headers/gameApplication.hpp"
 #include "../../headers/managers/spriteManager.hpp"
