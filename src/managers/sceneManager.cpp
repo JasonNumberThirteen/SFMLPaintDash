@@ -1,7 +1,7 @@
 #include <memory>
 #include <algorithm>
 
-#include "../../headers/scene/mainMenuScene.hpp"
+#include "../../headers/scenes/mainMenuScene.hpp"
 #include "../../headers/managers/sceneManager.hpp"
 
 PaintDash::managers::SceneManager::SceneManager()

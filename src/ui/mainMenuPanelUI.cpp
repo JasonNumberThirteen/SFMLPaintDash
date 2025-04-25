@@ -1,7 +1,7 @@
 #include "../../headers/constants.hpp"
 #include "../../headers/gameApplication.hpp"
 #include "../../headers/ui/mainMenuPanelUI.hpp"
-#include "../../headers/scene/mainMenuScene.hpp"
+#include "../../headers/scenes/mainMenuScene.hpp"
 
 extern PaintDash::core::GameApplication gameApplication;
 

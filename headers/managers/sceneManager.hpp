@@ -1,7 +1,7 @@
 #ifndef PAINT_DASH_SCENE_MANAGER_H
 #define PAINT_DASH_SCENE_MANAGER_H
 
-#include "../scene/scene.hpp"
+#include "../scenes/scene.hpp"
 
 namespace PaintDash
 {

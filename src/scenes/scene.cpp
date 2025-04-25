@@ -1,4 +1,4 @@
-#include "../../headers/scene/scene.hpp"
+#include "../../headers/scenes/scene.hpp"
 
 PaintDash::core::Scene::Scene(const std::string id)
 {
